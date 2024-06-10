@@ -4,7 +4,7 @@ plugins {
 
 apply plugin: 'maven-publish'
 
-group = 'pl.codelen.libs'
+group = 'com.github.spacenough1'
 version = '1.0-SNAPSHOT'
 
 repositories {
