@@ -4,14 +4,21 @@ Cl-Version allows you to check for new versions of a specified repository on Git
 
 ---
 
-[![](https://jitpack.io/v/spacenough1/CL-Version.svg)](https://jitpack.io/#spacenough1/CL-Version)
-
 ### Quick Start
 
-### 1. Add the Package
+### 1. Add CL-Version to your project
 
-Ensure you have the `pl.codelen.libs` package in your project.
+### Gradle
+```groovy
+repositories {
+  maven { url 'https://jitpack.io' }
+  mavenCentral()
+}
 
+dependencies {
+  implementation 'com.github.spacenough1:CL-Version:master-SNAPSHOT'
+}
+```
 ### 2. Usage Example
 
 Here's how to use `VersionControl` with `VersionControlBuilder`:
