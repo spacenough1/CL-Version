@@ -1,8 +1,8 @@
 plugins {
     id 'java'
-    id 'maven-publish'
 }
 
+apply plugin: 'maven-publish'
 
 group = 'pl.codelen.libs'
 version = '1.0-SNAPSHOT'
