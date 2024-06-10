@@ -4,6 +4,8 @@ Cl-Version allows you to check for new versions of a specified repository on Git
 
 ---
 
+[![](https://jitpack.io/v/spacenough1/CL-Version.svg)](https://jitpack.io/#spacenough1/CL-Version)
+
 ### Quick Start
 
 ### 1. Add the Package
