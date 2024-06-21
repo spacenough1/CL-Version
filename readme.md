@@ -24,12 +24,14 @@ dependencies {
 Here's how to use `VersionControl` with `VersionControlBuilder`:
 
 ```java
+// if you have private repository you have to add GitHub token to ensure authentication
+// #setGithubToken("token")
 import pl.codelen.libs.VersionControl;
 import pl.codelen.libs.VersionControlBuilder;
 
 public class Main {
   static VersionControl versionControl;
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) {
     versionControl = new VersionControlBuilder()
             .setCurrentVersion("1.1.0")
             .setRepositoryName("TestRepository")

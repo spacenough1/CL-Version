@@ -4,9 +4,15 @@ public class VersionControlBuilder {
   private String repositoryName;
   private String repositoryOwner;
   private String currentVersion;
+  private String githubToken;
 
   public VersionControlBuilder setRepositoryName(String repositoryName) {
     this.repositoryName = repositoryName;
+    return this;
+  }
+
+  public VersionControlBuilder setGithubToken(String githubToken) {
+    this.githubToken = githubToken;
     return this;
   }
 
@@ -27,6 +33,10 @@ public class VersionControlBuilder {
   // Getters to access the private fields from the builder
   String getRepositoryName() {
     return repositoryName;
+  }
+
+  String getGithubToken() {
+    return githubToken;
   }
 
   String getRepositoryOwner() {

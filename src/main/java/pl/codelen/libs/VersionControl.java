@@ -12,11 +12,13 @@ public class VersionControl {
   private final String repositoryName;
   private final String repositoryOwner;
   private final String currentVersion;
+  private final String githubToken;
 
   VersionControl(@NotNull VersionControlBuilder builder) {
     this.repositoryName = builder.getRepositoryName();
     this.repositoryOwner = builder.getRepositoryOwner();
     this.currentVersion = builder.getCurrentVersion();
+    this.githubToken = builder.getGithubToken();
   }
 
   public boolean isNewVersion() throws IOException {
@@ -28,6 +30,26 @@ public class VersionControl {
   }
 
   private @NotNull String latestVersion() throws IOException {
+    if (githubToken != null) {
+      URL url = new URL("https://api.github.com/repos/" + repositoryOwner + "/" + repositoryName + "/releases/latest");
+      HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+      conn.setRequestMethod("GET");
+      conn.setRequestProperty("Authorization", "token " + githubToken);
+      conn.setRequestProperty("Accept", "application/json");
+
+      BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+
+      String output;
+      StringBuilder response = new StringBuilder();
+      while ((output = br.readLine()) != null) {
+        response.append(output);
+      }
+
+      conn.disconnect();
+
+      return parseLatestVersion(response.toString());
+    }
+
     URL url = new URL("https://api.github.com/repos/" + repositoryOwner + "/" + repositoryName + "/releases/latest");
     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
     conn.setRequestMethod("GET");
