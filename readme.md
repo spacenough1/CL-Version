@@ -45,6 +45,7 @@ public class Main {
 
 ### 3. Builder Methods
 
+- `setGithubToken(String githubToken)`: Sets authentication for private repositories
 - `setRepositoryName(String repositoryName)`: Sets the repository name.
 - `setRepositoryOwner(String repositoryOwner)`: Sets the repository owner.
 - `setCurrentVersion(String currentVersion)`: Sets the current version of the repository.
@@ -62,24 +63,24 @@ public class Main {
 1. **Initialize Builder**
 2. **Set Parameters**:
     
-    ```java
-    builder.setRepositoryName("example-repo")
-           .setRepositoryOwner("example-owner")
-           .setCurrentVersion("1.0.0");
-    ```
+```java
+  builder.setRepositoryName("example-repo")
+        .setRepositoryOwner("example-owner")
+        .setCurrentVersion("1.0.0");
+```
     
 3. **Build VersionControl Instance**:
     
-    ```java
-    VersionConrol versionControl = builder.build();
-    ```
+```java
+  VersionConrol versionControl = builder.build();
+```
     
 4. **Check for New Version**:
     
-    ```java
-    System.out.println("Is new version available: " + (versionControl.isNewVersion() ? "yes" : "no"));
-    System.out.println("Latest version is: " + versionControl.latestVersionNumber());
-    ```
+```java
+  System.out.println("Is new version available: " + (versionControl.isNewVersion() ? "yes" : "no"));
+  System.out.println("Latest version is: " + versionControl.latestVersionNumber());
+```
     
 
 ### Notes
