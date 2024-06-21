@@ -78,7 +78,7 @@ public class Main {
     
     ```java
     System.out.println("Is new version available: " + (versionControl.isNewVersion() ? "yes" : "no"));
-        System.out.println("Latest version is: " + versionControl.latestVersionNumber());
+    System.out.println("Latest version is: " + versionControl.latestVersionNumber());
     ```
     
 
