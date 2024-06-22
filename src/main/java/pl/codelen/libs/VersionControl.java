@@ -34,7 +34,7 @@ public class VersionControl {
       URL url = new URL("https://api.github.com/repos/" + repositoryOwner + "/" + repositoryName + "/releases/latest");
       HttpURLConnection conn = (HttpURLConnection) url.openConnection();
       conn.setRequestMethod("GET");
-      conn.setRequestProperty("Authorization", "token " + githubToken);
+      conn.setRequestProperty("Authorization", "Bearer " + githubToken);
       conn.setRequestProperty("Accept", "application/json");
 
       BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
